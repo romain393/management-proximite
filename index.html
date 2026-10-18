@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Management de proximité – Skiill</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Formation intra-entreprise « Développer les fondamentaux du management de proximité » – Skiill Retail Academy – 4 novembre 2026, Parentis-en-Born.">
+<meta name="robots" content="noindex">
+<style>
+/* Mise en page : une seule page verticale, colonne de lecture de 1040 px, blocs séparés par l'espace plutôt que par des cadres.
+   Polices système uniquement : aucune requête vers un service tiers (RGPD, sobriété). */
+:root {
+  --bg: #F7F9FD;
+  --surface: #FFFFFF;
+  --ink: #1B1B29;
+  --muted: #4A5164;
+  --line: #D9E1EE;
+  --accent: #0B5BD3;      /* bleu Skiill assombri : 6,1:1 sur blanc */
+  --on-accent: #FFFFFF;
+  --green: #35DB87;
+  --orange: #FF7F11;
+  --tint: #E8F0FF;
+  --font-display: "Avenir Next", "Segoe UI Variable Display", "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-body: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --step-0: 1.125rem;
+  --step-1: 1.35rem;
+  --step-2: 1.75rem;
+  --step-3: clamp(2rem, 1.4rem + 2.6vw, 3rem);
+  --radius: 14px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #12121C; --surface: #1B1B29; --ink: #F2F4F8; --muted: #B5BCCB; --line: #2E3245;
+    --accent: #6FA6FF; --on-accent: #12121C; --tint: #1E2A44;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #12121C; --surface: #1B1B29; --ink: #F2F4F8; --muted: #B5BCCB; --line: #2E3245;
+  --accent: #6FA6FF; --on-accent: #12121C; --tint: #1E2A44;
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--step-0);
+  line-height: 1.6;
+}
+img { max-width: 100%; height: auto; }
+a { color: var(--accent); text-underline-offset: 3px; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+h1, h2, h3 { font-family: var(--font-display); line-height: 1.2; text-wrap: balance; margin: 0; }
+h2 { font-size: var(--step-2); }
+p { margin: 0; max-width: 65ch; }
+
+.skip { position: absolute; left: -999px; top: 0; background: var(--accent); color: var(--on-accent); padding: .6rem 1rem; z-index: 20; }
+.skip:focus { left: 16px; top: 16px; }
+
+.wrap {
+  max-width: 1040px;
+  margin-inline: auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+main .wrap { display: grid; gap: 4.5rem; padding-block: 3rem 4.5rem; }
+section { display: grid; gap: 1.5rem; scroll-margin-top: 1rem; }
+.eyebrow { font-size: .9rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+
+/* En-tête */
+header.hero { background: var(--surface); border-bottom: 1px solid var(--line); }
+header.hero .wrap { display: grid; gap: 1.75rem; padding-block: 2rem 2.5rem; }
+.brand { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+.brand img { width: 168px; background: #FFFFFF; border-radius: 10px; padding: 8px 12px; }
+.badge { font-size: .9rem; font-weight: 600; padding: .35rem .8rem; border-radius: 999px; background: var(--tint); color: var(--ink); }
+h1 { font-size: var(--step-3); font-weight: 800; letter-spacing: -.01em; max-width: 22ch; }
+.hook { font-size: var(--step-1); color: var(--muted); max-width: 46ch; }
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 1rem 2rem; margin: 0; padding-top: 1.5rem; border-top: 1px solid var(--line); }
+.facts div { min-width: 0; }
+.facts dt { font-size: .85rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.facts dd { margin: .2rem 0 0; font-weight: 600; font-variant-numeric: tabular-nums; }
+.cta-row { display: flex; flex-wrap: wrap; gap: .75rem; }
+
+.btn {
+  display: inline-flex; align-items: center; gap: .6rem;
+  min-height: 48px; padding: .75rem 1.25rem;
+  border-radius: 10px; font-weight: 700; font-size: 1rem; text-decoration: none;
+  background: var(--accent); color: var(--on-accent); border: 2px solid var(--accent); cursor: pointer;
+  font-family: inherit;
+}
+.btn:hover { filter: brightness(1.08); }
+.btn.secondary { background: transparent; color: var(--accent); }
+.btn[aria-disabled="true"] { background: transparent; color: var(--muted); border: 2px dashed var(--line); cursor: not-allowed; filter: none; }
+.btn svg { width: 20px; height: 20px; flex: none; }
+
+.banner { margin: 0; }
+.banner img { display: block; width: 100%; }
+
+/* Objectifs */
+.goals { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.goals li { min-width: 0; padding-left: 1.1rem; border-left: 4px solid var(--green); }
+.goals strong { display: block; font-family: var(--font-display); }
+
+/* Programme en accordéon */
+.day { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.modules { display: grid; gap: .75rem; }
+details { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
+details[open] { border-color: var(--accent); }
+summary {
+  list-style: none; cursor: pointer;
+  display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 1rem;
+  padding: 1rem 1.25rem; min-height: 56px;
+}
+summary::-webkit-details-marker { display: none; }
+.num { font-family: var(--font-display); font-weight: 800; font-size: 1.25rem; color: var(--accent); font-variant-numeric: tabular-nums; width: 2ch; }
+.mod-title { font-weight: 700; min-width: 0; }
+.mod-time { display: block; font-size: .95rem; font-weight: 500; color: var(--muted); font-variant-numeric: tabular-nums; }
+.chev { width: 22px; height: 22px; transition: transform .2s; color: var(--muted); }
+details[open] .chev { transform: rotate(180deg); }
+.mod-body { padding: 0 1.25rem 1.25rem calc(1.25rem + 2ch + 1rem); display: grid; gap: .75rem; }
+.mod-body ul { margin: 0; padding-left: 1.2rem; display: grid; gap: .3rem; }
+.method { font-size: 1rem; color: var(--muted); }
+.method b { color: var(--ink); }
+@media (max-width: 520px) { .mod-body { padding-left: 1.25rem; } }
+
+/* Mot du formateur */
+.trainer { display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); align-items: center; }
+.trainer > * { min-width: 0; }
+.video {
+  aspect-ratio: 16 / 9; max-width: 100%; border-radius: var(--radius); overflow: hidden;
+  background: var(--tint); display: grid; place-items: center; text-align: center; padding: 1.5rem;
+  border: 1px solid var(--line);
+}
+.video iframe { width: 100%; height: 100%; border: 0; }
+.video p { color: var(--muted); font-size: 1rem; }
+.quote { display: grid; gap: 1rem; }
+.quote p:first-child { font-size: var(--step-1); font-family: var(--font-display); line-height: 1.4; }
+.sign { font-weight: 700; }
+.sign span { display: block; font-weight: 400; color: var(--muted); font-size: 1rem; }
+
+/* Lieu et carte */
+.place { display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.place > * { min-width: 0; }
+address { font-style: normal; font-weight: 600; font-size: var(--step-1); line-height: 1.4; }
+.notes { display: grid; gap: .6rem; color: var(--muted); font-size: 1rem; }
+.map {
+  aspect-ratio: 4 / 3; max-width: 100%; border-radius: var(--radius); overflow: hidden;
+  border: 1px solid var(--line); background: var(--tint);
+  display: grid; place-items: center; text-align: center; padding: 1.5rem;
+}
+.map iframe { width: 100%; height: 100%; border: 0; }
+.map-inner { display: grid; gap: 1rem; justify-items: center; }
+.map-inner p { color: var(--muted); font-size: .95rem; max-width: 34ch; }
+
+/* Téléchargements */
+.downloads { display: flex; flex-wrap: wrap; gap: 1rem; }
+
+/* Accessibilité */
+.access { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.75rem; display: grid; gap: 1rem; }
+
+/* Pied de page */
+footer { background: var(--surface); border-top: 1px solid var(--line); font-size: 1rem; }
+footer .wrap { display: grid; gap: 2rem; padding-block: 2.5rem; }
+.foot-cols { display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.foot-cols > div { min-width: 0; display: grid; gap: .4rem; align-content: start; }
+.foot-cols h3 { font-size: 1rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin-bottom: .3rem; }
+.legal { color: var(--muted); font-size: .9rem; border-top: 1px solid var(--line); padding-top: 1.5rem; display: grid; gap: .4rem; }
+.legal p { max-width: none; }
+</style>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="brand">
+      <img src="logo.png" alt="Skiill Academy" width="560" height="307">
+      <span class="badge">Session intra-entreprise · participants inscrits</span>
+    </div>
+
+    <div style="display:grid;gap:1rem">
+      <p class="eyebrow">Formation management · Grande distribution</p>
+      <h1>Développer les fondamentaux du management de proximité</h1>
+      <p class="hook">Management au quotidien : consolider et enrichir ses pratiques managériales.</p>
+    </div>
+
+    <dl class="facts">
+      <div><dt>Date</dt><dd>Mercredi 4 novembre 2026</dd></div>
+      <div><dt>Horaires</dt><dd>9h00 – 17h00</dd></div>
+      <div><dt>Durée</dt><dd>1 jour · 7 heures</dd></div>
+      <div><dt>Lieu</dt><dd>Parentis-en-Born (40)</dd></div>
+      <div><dt>Pour qui</dt><dd>Managers de rayon et de service</dd></div>
+    </dl>
+
+    <div class="cta-row">
+      <a class="btn" href="#programme">Voir le programme</a>
+      <a class="btn secondary" href="#lieu">Comment venir</a>
+    </div>
+  </div>
+</header>
+
+<main id="contenu">
+  <div class="wrap">
+
+    <figure class="banner">
+      <img src="banniere.svg" alt="Illustration : un manager au premier plan, entouré de son équipe." width="1200" height="320">
+    </figure>
+
+    <section aria-labelledby="t-objectifs">
+      <h2 id="t-objectifs">Ce que vous saurez faire en fin de journée</h2>
+      <ul class="goals">
+        <li><strong>Adapter votre communication</strong>Lire les comportements et les besoins de vos collaborateurs avec le modèle DISC, et ajuster vos leviers de motivation.</li>
+        <li><strong>Recadrer avec justesse</strong>Choisir la bonne stratégie d'entretien selon la situation et les réactions du collaborateur.</li>
+        <li><strong>Passer du chiffre à l'action</strong>Analyser un écart d'indicateur, en chercher les causes et décider d'actions managériales concrètes.</li>
+        <li><strong>Animer des briefs qui mobilisent</strong>Gagner en clarté et en engagement lors de vos briefs d'équipe.</li>
+        <li><strong>Déléguer et responsabiliser</strong>Ajuster le niveau d'autonomie, les objectifs confiés et le suivi, sans micromanagement.</li>
+      </ul>
+    </section>
+
+    <section id="programme" aria-labelledby="t-programme">
+      <h2 id="t-programme">Le programme, module par module</h2>
+      <p class="day"><span>9h00 · Accueil et cadrage de la journée</span><span>Pauses à 11h00, 12h30 et 15h30</span><span>17h00 · Fin</span></p>
+
+      <div class="modules">
+        <details>
+          <summary><span class="num">1</span><span class="mod-title">Manager avec clarté et exigence<span class="mod-time">9h30 – 10h15</span></span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="mod-body">
+            <ul>
+              <li>Clarifier les attentes et les objectifs opérationnels.</li>
+              <li>Formuler des feedbacks précis, constructifs et exigeants.</li>
+              <li>Trouver le juste équilibre entre soutien, exigence et contrôle.</li>
+            </ul>
+            <p class="method"><b>Comment :</b> apport court, atelier de reformulation, feedback en 90 secondes.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary><span class="num">2</span><span class="mod-title">Recadrer sans dégrader la relation<span class="mod-time">10h15 – 11h00</span></span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="mod-body">
+            <ul>
+              <li>Structurer un entretien de recadrage à partir des faits et de leurs impacts.</li>
+              <li>Gérer les objections et les réactions du collaborateur.</li>
+              <li>Garder une posture sereine et obtenir un engagement concret.</li>
+            </ul>
+            <p class="method"><b>Comment :</b> jeux de rôles sur des cas de performance et de comportement, feedback entre pairs.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary><span class="num">3</span><span class="mod-title">Adapter son management avec le modèle DISC<span class="mod-time">11h15 – 12h30</span></span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="mod-body">
+            <ul>
+              <li>Identifier les styles comportementaux à partir d'indices observables.</li>
+              <li>Analyser les besoins, les motivations et les réactions sous stress.</li>
+              <li>Ajuster sa communication et ses interventions selon les profils.</li>
+            </ul>
+            <p class="method"><b>Comment :</b> présentation interactive, cartes profils, diagnostic de cas.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary><span class="num">4</span><span class="mod-title">Gérer les conflits et les situations de performance<span class="mod-time">13h45 – 14h45</span></span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="mod-body">
+            <ul>
+              <li>Analyser les situations de tension entre collaborateurs.</li>
+              <li>Adapter sa posture et sa communication pour résoudre un conflit.</li>
+              <li>Conduire un échange de performance exigeant et responsabilisant.</li>
+            </ul>
+            <p class="method"><b>Comment :</b> jeux de rôles tournants avec grille d'observation. La reprise de 13h30 commence par un quiz en équipes.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary><span class="num">5</span><span class="mod-title">Accompagner le changement<span class="mod-time">14h45 – 15h30</span></span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="mod-body">
+            <ul>
+              <li>Donner du sens aux décisions et aux évolutions d'organisation.</li>
+              <li>Analyser les différentes réactions face au changement.</li>
+              <li>Adapter son accompagnement pour garder l'engagement de l'équipe.</li>
+            </ul>
+            <p class="method"><b>Comment :</b> simulation d'annonce (par exemple une opération commerciale) face à trois réactions : opposition, enthousiasme dispersé, résistance silencieuse.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary><span class="num">6</span><span class="mod-title">Transformer les indicateurs en actions managériales<span class="mod-time">15h45 – 16h15</span></span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="mod-body">
+            <ul>
+              <li>Analyser les écarts de performance à partir d'indicateurs opérationnels.</li>
+              <li>Identifier les causes possibles et questionner avant de conclure.</li>
+              <li>Définir des actions correctives et leur suivi.</li>
+            </ul>
+            <p class="method"><b>Comment :</b> étude de cas en binômes sur un mini tableau de bord (CA, marge, casse ou démarque). Restitution en 3 minutes : constat, causes à vérifier, décision, suivi.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary><span class="num">7</span><span class="mod-title">Adopter une posture de manager-coach<span class="mod-time">16h15 – 16h40</span></span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="mod-body">
+            <ul>
+              <li>Développer l'autonomie des collaborateurs par le questionnement.</li>
+              <li>Déléguer en définissant des objectifs et des résultats attendus.</li>
+              <li>Adapter le contrôle sans tomber dans le micromanagement.</li>
+            </ul>
+            <p class="method"><b>Comment :</b> entraînement en binômes, construction d'un contrat de délégation simple.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary><span class="num">8</span><span class="mod-title">Consolider les acquis et formaliser son plan d'action<span class="mod-time">16h40 – 17h00</span></span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <div class="mod-body">
+            <ul>
+              <li>Identifier ses points forts et ses axes de progression.</li>
+              <li>Formaliser trois engagements managériaux mesurables à 30 jours.</li>
+              <li>Définir les indicateurs qui permettront de vérifier la mise en pratique.</li>
+            </ul>
+            <p class="method"><b>Comment :</b> plan d'action individuel et engagement entre pairs. Un carnet d'expérimentation vous accompagne pendant les 30 jours suivants.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section aria-labelledby="t-formateur">
+      <h2 id="t-formateur">Le mot du formateur</h2>
+      <div class="trainer">
+        <!-- Vidéo : renseigner l'identifiant YouTube dans data-youtube-id (ex. "dQw4w9WgXcQ").
+             La vidéo ne se charge qu'au clic, depuis youtube-nocookie.com. -->
+        <div class="video" id="video" data-youtube-id="">
+          <p>La vidéo de présentation sera bientôt disponible.</p>
+        </div>
+        <div class="quote">
+          <p>« Cette journée est un entraînement, pas un rappel de bases. Vous venez avec vos situations du magasin, vous repartez avec trois engagements concrets à tenir dans les 30 jours. »</p>
+          <p class="sign">Romain Breux<span>Fondateur de Skiill Retail Academy, ancien directeur de magasin, praticien certifié DISC</span></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="lieu" aria-labelledby="t-lieu">
+      <h2 id="t-lieu">Où se déroule la formation</h2>
+      <div class="place">
+        <div style="display:grid;gap:1.25rem;align-content:start">
+          <address>606 avenue Brémontier<br>40160 Parentis-en-Born</address>
+          <div class="notes">
+            <p>La formation a lieu dans les locaux de votre entreprise.</p>
+            <p>Besoin d'un aménagement d'accès ou de salle ? Prévenez-nous au moins 4 semaines avant la session.</p>
+            <p>Vous venez à plusieurs ? Pensez au covoiturage.</p>
+          </div>
+          <a class="btn secondary" href="https://www.google.com/maps/search/?api=1&amp;query=606%20avenue%20Br%C3%A9montier%2C%2040160%20Parentis-en-Born" target="_blank" rel="noopener">Ouvrir l'itinéraire dans Google Maps</a>
+        </div>
+        <div class="map" id="map">
+          <div class="map-inner">
+            <button class="btn" type="button" id="map-load">Afficher la carte</button>
+            <p>La carte est fournie par Google. Elle ne se charge qu'à votre demande, car Google peut alors déposer des cookies.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="t-docs">
+      <h2 id="t-docs">Vos documents</h2>
+      <div class="downloads">
+        <a class="btn" href="programme.pdf" type="application/pdf">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M5 21h14"/></svg>
+          Programme détaillé (PDF, 187 Ko)
+        </a>
+        <!-- Livret stagiaire : quand livret-stagiaire.pdf est déposé à la racine, remplacer ce <span> par :
+             <a class="btn" href="livret-stagiaire.pdf" type="application/pdf">Livret stagiaire (PDF)</a> -->
+        <span class="btn" aria-disabled="true">Livret stagiaire (PDF) · disponible avant la formation</span>
+      </div>
+    </section>
+
+    <section aria-labelledby="t-access">
+      <div class="access">
+        <h2 id="t-access">Une formation accessible à toutes et tous</h2>
+        <p>Si vous êtes en situation de handicap, ou si vous avez un besoin particulier, nous adaptons les supports, le rythme et les mises en situation. Contactez notre référent handicap avant la session, idéalement 4 semaines à l'avance.</p>
+        <p><strong>Romain Breux</strong>, référent handicap · <a href="tel:+33676261852">06 76 26 18 52</a> · <a href="mailto:romain@skiill.fr">romain@skiill.fr</a></p>
+        <p><a href="https://www.skiill.fr/skiill-retail-academy/accessible-handicap" target="_blank" rel="noopener">Lire notre politique d'inclusion et de gestion du handicap</a></p>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-cols">
+      <div>
+        <h3>Votre formateur</h3>
+        <p><strong>Romain Breux</strong></p>
+        <p><a href="tel:+33676261852">06 76 26 18 52</a></p>
+        <p><a href="mailto:romain@skiill.fr">romain@skiill.fr</a></p>
+      </div>
+      <div>
+        <h3>Organisme de formation</h3>
+        <p><strong>Skiill Retail Academy</strong></p>
+        <p>325 rue des Pruniers<br>83520 Roquebrune-sur-Argens</p>
+      </div>
+      <div>
+        <h3>Inclusion et handicap</h3>
+        <p><a href="https://www.skiill.fr/skiill-retail-academy/accessible-handicap" target="_blank" rel="noopener">Politique d'inclusion et de gestion du handicap</a></p>
+        <p>Référent handicap : Romain Breux</p>
+      </div>
+    </div>
+    <div class="legal">
+      <p>Déclaration d'activité n° 93 83 06954 83 (préfet de région Provence-Alpes-Côte d'Azur). Organisme certifié Qualiopi au titre des actions de formation, certificat n° 2103630.1.</p>
+      <p>Éditeur : Skiill Retail Academy, SIRET 918 245 440 00014. Directeur de la publication : Romain Breux. Hébergement : GitHub Pages, GitHub Inc., San Francisco, États-Unis.</p>
+      <p>Cette page ne dépose aucun cookie. La carte et la vidéo ne se chargent qu'à votre demande.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var MAP_SRC = "https://www.google.com/maps?q=606%20avenue%20Br%C3%A9montier%2C%2040160%20Parentis-en-Born&output=embed";
+  var btn = document.getElementById("map-load");
+  if (btn) {
+    btn.addEventListener("click", function () {
+      var map = document.getElementById("map");
+      var f = document.createElement("iframe");
+      f.src = MAP_SRC;
+      f.title = "Carte : 606 avenue Brémontier, Parentis-en-Born";
+      f.loading = "lazy";
+      f.referrerPolicy = "no-referrer-when-downgrade";
+      map.style.padding = "0";
+      map.replaceChildren(f);
+      f.focus();
+    });
+  }
+
+  var video = document.getElementById("video");
+  var id = video && video.dataset.youtubeId;
+  if (id) {
+    video.innerHTML = '<div class="map-inner"><button class="btn" type="button" id="video-load">Lancer la vidéo</button>' +
+      '<p>La vidéo est hébergée sur YouTube. Elle ne se charge qu\'à votre demande.</p></div>';
+    document.getElementById("video-load").addEventListener("click", function () {
+      var f = document.createElement("iframe");
+      f.src = "https://www.youtube-nocookie.com/embed/" + encodeURIComponent(id) + "?autoplay=1";
+      f.title = "Vidéo : le mot du formateur";
+      f.allow = "autoplay; encrypted-media; picture-in-picture";
+      f.allowFullscreen = true;
+      video.style.padding = "0";
+      video.replaceChildren(f);
+    });
+  }
+})();
+</script>
+</body>
+</html>

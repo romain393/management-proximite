@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" role="img" aria-labelledby="t d">
+  <title id="t">Un manager de proximité et son équipe</title>
+  <desc id="d">Illustration stylisée : une silhouette bleue au premier plan, entourée de huit silhouettes de collaborateurs de tailles et de couleurs variées, alignées comme dans une allée de magasin.</desc>
+  <!-- Silhouettes inspirées des deux « i » du logo : une tête ronde, un corps arrondi -->
+  <g opacity="0.9">
+    <!-- arrière-plan : rayonnages -->
+    <rect x="40" y="96" width="1120" height="10" rx="5" fill="#156FFB" opacity="0.12"/>
+    <rect x="40" y="166" width="1120" height="10" rx="5" fill="#156FFB" opacity="0.12"/>
+    <rect x="40" y="236" width="1120" height="10" rx="5" fill="#156FFB" opacity="0.12"/>
+  </g>
+  <g>
+    <!-- équipe -->
+    <circle cx="150" cy="150" r="22" fill="#35DB87"/><rect x="128" y="182" width="44" height="118" rx="20" fill="#35DB87"/>
+    <circle cx="250" cy="132" r="22" fill="#5B6478"/><rect x="228" y="164" width="44" height="136" rx="20" fill="#5B6478"/>
+    <circle cx="350" cy="158" r="22" fill="#FF7F11"/><rect x="328" y="190" width="44" height="110" rx="20" fill="#FF7F11"/>
+    <circle cx="450" cy="140" r="22" fill="#35DB87"/><rect x="428" y="172" width="44" height="128" rx="20" fill="#35DB87"/>
+    <!-- manager au premier plan -->
+    <circle cx="600" cy="74" r="38" fill="#156FFB"/><rect x="562" y="126" width="76" height="174" rx="34" fill="#156FFB"/>
+    <circle cx="750" cy="146" r="22" fill="#5B6478"/><rect x="728" y="178" width="44" height="122" rx="20" fill="#5B6478"/>
+    <circle cx="850" cy="128" r="22" fill="#FF7F11"/><rect x="828" y="160" width="44" height="140" rx="20" fill="#FF7F11"/>
+    <circle cx="950" cy="154" r="22" fill="#35DB87"/><rect x="928" y="186" width="44" height="114" rx="20" fill="#35DB87"/>
+    <circle cx="1050" cy="138" r="22" fill="#5B6478"/><rect x="1028" y="170" width="44" height="130" rx="20" fill="#5B6478"/>
+  </g>
+  <rect x="40" y="300" width="1120" height="6" rx="3" fill="#5B6478" opacity="0.35"/>
+</svg>
